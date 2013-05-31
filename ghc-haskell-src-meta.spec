@@ -2,7 +2,7 @@
 Summary:	Parse source to template-haskell abstract syntax
 Name:		ghc-%{pkgname}
 Version:	0.6.0.2
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/%{pkgname}/%{version}/%{pkgname}-%{version}.tar.gz
@@ -15,11 +15,14 @@ BuildRequires:	ghc-haskell-src-exts
 BuildRequires:	ghc-haskell-src-exts-prof
 BuildRequires:	ghc-th-lift
 BuildRequires:	ghc-th-lift-prof
+BuildRequires:	ghc-th-orphans
+BuildRequires:	ghc-th-orphans-prof
 BuildRequires:	rpmbuild(macros) >= 1.608
 %requires_releq	ghc
 Requires:	ghc-haskell-platform
 Requires:	ghc-haskell-src-exts
 Requires:	ghc-th-lift
+Requires:	ghc-th-orphans
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # debuginfo is not useful for ghc
