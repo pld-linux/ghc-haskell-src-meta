@@ -1,12 +1,12 @@
 %define		pkgname	haskell-src-meta
 Summary:	Parse source to template-haskell abstract syntax
 Name:		ghc-%{pkgname}
-Version:	0.5.0.2
+Version:	0.6.0.2
 Release:	1
 License:	BSD
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/%{pkgname}/%{version}/%{pkgname}-%{version}.tar.gz
-# Source0-md5:	40672231eb35e6b3687b95c94289c5e4
+# Source0-md5:	d3b9c3dfbc9bb9466e0a002ed195c352
 URL:		http://hackage.haskell.org/package/haskell-src-meta/
 BuildRequires:	ghc >= 6.12.3
 BuildRequires:	ghc-haskell-platform
@@ -68,8 +68,9 @@ install -d $RPM_BUILD_ROOT%{_libdir}/%{ghcdir}/package.conf.d
 runhaskell Setup.lhs copy --destdir=$RPM_BUILD_ROOT
 
 # work around automatic haddock docs installation
-rm -rf %{name}-%{version}-doc
+%{__rm} -rf %{name}-%{version}-doc
 cp -a $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version} %{name}-%{version}-doc
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version} %{name}-%{version}-doc
 
 runhaskell Setup.lhs register \
 	--gen-pkg-config=$RPM_BUILD_ROOT/%{_libdir}/%{ghcdir}/package.conf.d/%{pkgname}.conf
