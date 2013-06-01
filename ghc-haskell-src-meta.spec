@@ -2,7 +2,7 @@
 Summary:	Parse source to template-haskell abstract syntax
 Name:		ghc-%{pkgname}
 Version:	0.6.0.2
-Release:	3
+Release:	4
 License:	BSD
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/%{pkgname}/%{version}/%{pkgname}-%{version}.tar.gz
@@ -101,11 +101,13 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Language
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Language/Haskell
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Language/Haskell/Meta
+%dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Language/Haskell/Meta/Parse
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Language/Haskell/Meta/Syntax
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Language/Haskell/TH
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Language/Haskell/TH/Instances
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Language/Haskell/*.hi
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Language/Haskell/Meta/*.hi
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Language/Haskell/Meta/Parse/*.hi
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Language/Haskell/Meta/Syntax/*.hi
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Language/Haskell/TH/Instances/*.hi
 
@@ -114,5 +116,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/*_p.a
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Language/Haskell/*.p_hi
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Language/Haskell/Meta/*.p_hi
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Language/Haskell/Meta/Parse/*.p_hi
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Language/Haskell/Meta/Syntax/*.p_hi
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Language/Haskell/TH/Instances/*.p_hi
