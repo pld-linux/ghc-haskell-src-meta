@@ -2,7 +2,7 @@
 Summary:	Parse source to template-haskell abstract syntax
 Name:		ghc-%{pkgname}
 Version:	0.6.0.2
-Release:	2
+Release:	3
 License:	BSD
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/%{pkgname}/%{version}/%{pkgname}-%{version}.tar.gz
@@ -42,6 +42,7 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	ghc-haskell-platform-prof
 Requires:	ghc-haskell-src-exts-prof
 Requires:	ghc-th-lift-prof
+Requires:	ghc-th-orphans-prof
 
 %description prof
 Profiling %{pkgname} library for GHC.  Should be installed when
