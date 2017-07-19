@@ -7,7 +7,7 @@ Summary:	Parse source to template-haskell abstract syntax
 Summary(pl.UTF-8):	Przetwarzanie źródeł do abstrakcyjnej składni biblioteki template-haskell
 Name:		ghc-%{pkgname}
 Version:	0.8.0.1
-Release:	1
+Release:	0.1
 License:	BSD
 Group:		Development/Languages
 #Source0Download: http://hackage.haskell.org/package/haskell-src-meta
