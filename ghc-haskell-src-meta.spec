@@ -6,64 +6,58 @@
 Summary:	Parse source to template-haskell abstract syntax
 Summary(pl.UTF-8):	Przetwarzanie źródeł do abstrakcyjnej składni biblioteki template-haskell
 Name:		ghc-%{pkgname}
-Version:	0.6.0.5
+Version:	0.8.0.1
 Release:	1
 License:	BSD
 Group:		Development/Languages
 #Source0Download: http://hackage.haskell.org/package/haskell-src-meta
 Source0:	http://hackage.haskell.org/package/%{pkgname}-%{version}/%{pkgname}-%{version}.tar.gz
-# Source0-md5:	e59e0fedf6985494e82220477c54795c
+# Source0-md5:	32af1971443903b842131cfb2e526e39
 URL:		http://hackage.haskell.org/package/haskell-src-meta
 BuildRequires:	ghc >= 6.12.3
-BuildRequires:	ghc-base >= 4.2
-BuildRequires:	ghc-base < 4.8
-BuildRequires:	ghc-haskell-src-exts >= 1.14
-BuildRequires:	ghc-haskell-src-exts < 1.15
+BuildRequires:	ghc-base >= 4.6
+BuildRequires:	ghc-base < 4.11
+BuildRequires:	ghc-haskell-src-exts >= 1.17
+BuildRequires:	ghc-haskell-src-exts < 1.20
 BuildRequires:	ghc-pretty >= 1.0
 BuildRequires:	ghc-pretty < 1.2
 BuildRequires:	ghc-syb >= 0.1
-BuildRequires:	ghc-syb < 0.5
-BuildRequires:	ghc-template-haskell >= 2.4
-BuildRequires:	ghc-template-haskell < 2.10
-BuildRequires:	ghc-th-orphans >= 0.5
-BuildRequires:	ghc-th-orphans < 0.9
-BuildRequires:	ghc-uniplate >= 1.3
-BuildRequires:	ghc-uniplate < 1.7
+BuildRequires:	ghc-syb < 0.8
+BuildRequires:	ghc-template-haskell >= 2.8
+BuildRequires:	ghc-template-haskell < 2.13
+BuildRequires:	ghc-th-orphans >= 0.9.1
+BuildRequires:	ghc-th-orphans < 0.14
 %if %{with prof}
 BuildRequires:	ghc-prof >= 6.12.3
-BuildRequires:	ghc-base-prof >= 4.2
-BuildRequires:	ghc-base-prof < 4.8
-BuildRequires:	ghc-haskell-src-exts-prof >= 1.14
-BuildRequires:	ghc-haskell-src-exts-prof < 1.15
+BuildRequires:	ghc-base-prof >= 4.6
+BuildRequires:	ghc-base-prof < 4.11
+BuildRequires:	ghc-haskell-src-exts-prof >= 1.17
+BuildRequires:	ghc-haskell-src-exts-prof < 1.20
 BuildRequires:	ghc-pretty-prof >= 1.0
 BuildRequires:	ghc-pretty-prof < 1.2
 BuildRequires:	ghc-syb-prof >= 0.1
-BuildRequires:	ghc-syb-prof < 0.5
-BuildRequires:	ghc-template-haskell-prof >= 2.4
-BuildRequires:	ghc-template-haskell-prof < 2.10
-BuildRequires:	ghc-th-orphans-prof >= 0.5
-BuildRequires:	ghc-th-orphans-prof < 0.9
-BuildRequires:	ghc-uniplate-prof >= 1.3
-BuildRequires:	ghc-uniplate-prof < 1.7
+BuildRequires:	ghc-syb-prof < 0.8
+BuildRequires:	ghc-template-haskell-prof >= 2.8
+BuildRequires:	ghc-template-haskell-prof < 2.13
+BuildRequires:	ghc-th-orphans-prof >= 0.9.1
+BuildRequires:	ghc-th-orphans-prof < 0.14
 %endif
 BuildRequires:	rpmbuild(macros) >= 1.608
 Requires(post,postun):	/usr/bin/ghc-pkg
 %requires_releq	ghc
 Requires:	ghc >= 6.12.3
-Requires:	ghc-base >= 4.2
-Requires:	ghc-base < 4.8
-Requires:	ghc-haskell-src-exts >= 1.14
-Requires:	ghc-haskell-src-exts < 1.15
+Requires:	ghc-base >= 4.6
+Requires:	ghc-base < 4.11
+Requires:	ghc-haskell-src-exts >= 1.17
+Requires:	ghc-haskell-src-exts < 1.20
 Requires:	ghc-pretty >= 1.0
 Requires:	ghc-pretty < 1.2
 Requires:	ghc-syb >= 0.1
-Requires:	ghc-syb < 0.5
-Requires:	ghc-template-haskell >= 2.4
-Requires:	ghc-template-haskell < 2.10
-Requires:	ghc-th-orphans >= 0.5
-Requires:	ghc-th-orphans < 0.9
-Requires:	ghc-uniplate >= 1.3
-Requires:	ghc-uniplate < 1.7
+Requires:	ghc-syb < 0.8
+Requires:	ghc-template-haskell >= 2.8
+Requires:	ghc-template-haskell < 2.13
+Requires:	ghc-th-orphans >= 0.9.1
+Requires:	ghc-th-orphans < 0.14
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # debuginfo is not useful for ghc
@@ -84,20 +78,18 @@ Summary:	Profiling %{pkgname} library for GHC
 Summary(pl.UTF-8):	Biblioteka profilująca %{pkgname} dla GHC.
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	ghc-base-prof >= 4.2
-Requires:	ghc-base-prof < 4.8
-Requires:	ghc-haskell-src-exts-prof >= 1.14
-Requires:	ghc-haskell-src-exts-prof < 1.15
+Requires:	ghc-base-prof >= 4.6
+Requires:	ghc-base-prof < 4.11
+Requires:	ghc-haskell-src-exts-prof >= 1.17
+Requires:	ghc-haskell-src-exts-prof < 1.20
 Requires:	ghc-pretty-prof >= 1.0
 Requires:	ghc-pretty-prof < 1.2
 Requires:	ghc-syb-prof >= 0.1
-Requires:	ghc-syb-prof < 0.5
-Requires:	ghc-template-haskell-prof >= 2.4
-Requires:	ghc-template-haskell-prof < 2.10
-Requires:	ghc-th-orphans-prof >= 0.5
-Requires:	ghc-th-orphans-prof < 0.9
-Requires:	ghc-uniplate-prof >= 1.3
-Requires:	ghc-uniplate-prof < 1.7
+Requires:	ghc-syb-prof < 0.8
+Requires:	ghc-template-haskell-prof >= 2.8
+Requires:	ghc-template-haskell-prof < 2.13
+Requires:	ghc-th-orphans-prof >= 0.9.1
+Requires:	ghc-th-orphans-prof < 0.14
 
 %description prof
 Profiling %{pkgname} library for GHC. Should be installed when GHC's
